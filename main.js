@@ -1,12 +1,14 @@
-const EXPRESS = require("express");
-const QR = require("qr-image");
-var app = EXPRESS();
+"use strict";
+
+const Express = require("express");
+const Qr = require("qr-image");
+var app = Express();
 
 app.get("/qr/:text", function(req, res) {
-    var img = QR.imageSync(req.params.text, {
+    let img = Qr.imageSync(req.params.text, {
         type: "png",
-        ec_level: "H",
-        size: 9,
+        //ec_level: "H",
+        //size: 9,
         parse_url: false
     });
     res.type("png");
